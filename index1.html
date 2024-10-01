@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Detective Investigations - Gizemli Dedektif Maceraları">
+    <meta name="description" content="Detective Investigations ile gizemleri çözmeye hazır olun! Zorlu davalar ve şaşırtıcı olaylarla dolu bir dedektiflik oyunu.">
+    <title>Detective Investigations - Gizemli Dedektif Maceraları</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #eaeaea;
+        }
+
+        header {
+            background-color: #2E86C1;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .content-section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #2E86C1;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+
+        blockquote {
+            background: #f0f0f0;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-left: 5px solid #2E86C1;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .content-section {
+                padding: 15px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .content-section {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header, footer {
+                padding: 10px 0;
+            }
+
+            .content-section {
+                padding: 5px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+        }
+
+        header a {
+          text-decoration: none;
+        }
+
+        header a h1{
+          text-decoration: none;
+          color: #fff;
+        }
+
+        .menu {
+          display: flex;
+        }
+
+        .menu ul {
+          list-style-type: none;
+          display: flex;
+          margin-right: 20px;
+        }
+
+        .menu ul li{
+          margin-right: 20px;
+        }
+
+        .menu ul li a {
+          color: white;
+          text-decoration: none;
+        }
+
+        .burger-menu {
+          display: none;
+          font-size: 30px;
+          cursor: pointer;
+        }
+        @media (max-width: 768px) {
+          .menu {
+            display: flex;
+            flex-direction: column;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+          }
+
+          .menu ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            flex-direction: column;
+          }
+          .menu ul li{
+            margin-right: 0px;
+          }
+          .menu ul li {
+            list-style: none;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+          }
+
+          .burger-menu {
+            display: block;
+          }
+
+          .menu-open {
+            height: auto;
+            margin-top: 25px;
+            background-color: #2E86C1;
+            color: white;
+            text-align: center;
+            border-top: 1px solid #fff;
+          }
+
+          header a h1 {
+            font-size: 20px;
+          }
+        }
+
+        #original {
+          font-family: 'Open Sans', sans-serif !important;
+          direction: ltr;
+          font-size: 1em;
+          margin: 0;
+          background-color: #07498f;
+          color: #fff;
+        }
+
+        .wrap__btn--PxHri--section {
+          background-image: url('img/bg-desc.png');
+          background-size: cover;
+          width: 914px;
+          margin: 0 auto;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .logo-img {
+          margin-bottom: 20px;
+          width: 200px;
+          height: auto;
+        }
+
+        .button {
+          align-items: center;
+          background: #FFFFFF;
+          border: 0 solid #E2E8F0;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          box-sizing: border-box;
+          color: #1A202C;
+          display: inline-flex;
+          font-weight: 700;
+          height: 56px;
+          justify-content: center;
+          line-height: 24px;
+          overflow-wrap: break-word;
+          padding: 24px;
+          text-decoration: none;
+          width: auto;
+          border-radius: 8px;
+          cursor: pointer;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+        }
+
+        .button {
+          padding: 29px 55px;
+          font-size: 18px;
+          text-decoration: none !important;
+        }
+
+        .main__img--l83Xf--section {
+          text-align: center;
+          background: rgba(255, 255, 255, 0.0);
+          padding: 19px;
+          border-radius: 0px;
+          padding: 46px;
+        }
+
+        .main__img--l83Xf--section h1 {
+          font-weight: 400;
+          font-size: 37px;
+          border-bottom: 1px dotted #ccc;
+          padding-bottom: 22px;
+          margin-top: 0px;
+        }
+
+        .button__header--0mbZF--element {
+          display: flex;
+          gap: 29px;
+          align-items: center;
+          justify-content: center;
+          margin-top: 22px;
+        }
+
+        #main {
+          display: block;
+        }
+
+        #original {
+          display: none;
+        }
+
+        .button-yes {
+          background: #04cfa6;
+          box-shadow: 0 2px #082144;
+          transition: 0.5s;
+        }
+
+        .button-no {
+          background: #ff2401 !important;
+          padding: 29px 55px;
+          font-size: 18px;
+          text-decoration: none;
+          box-shadow: 0 3px #082144;
+        }
+
+        @media (max-width: 1200px) {
+          .wrap__btn--PxHri--section {
+            width: 100%;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .button__header--0mbZF--element {
+            flex-direction: column;
+          }
+        }
+
+        @media (max-width: 768px) {
+          #main {
+            display: none;
+          }
+
+          #original {
+            display: block;
+          }
+
+          .hero-image {
+            width: 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+
+<header>
+    <a href="index.html">
+        <h1>Detective Investigations</h1>
+    </a>
+    <span class="burger-menu">&#9776;</span>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="#about">Oyun Hakkında</a></li>
+            <li><a href="#reviews">Yorumlar</a></li>
+            <li><a href="policy.html">Gizlilik Politikası</a></li>
+            <li><a href="terms.html">Şartlar ve koşullar</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="content-section" id="about">
+        <h2>Oyun Hakkında</h2>
+        <p>Detective Investigations, gizemli cinayet davalarını ve karmaşık suçları çözmeniz gereken bir dedektiflik oyunudur. Oyuncular, ipuçlarını toplayarak ve şüphelileri sorgulayarak suçluları adalete teslim etmeye çalışır. Her dava sizi daha derin ve şaşırtıcı olayların içine çeker.</p>
+        <img src="img/1.jpg" alt="Detective Investigations">
+    </section>
+
+    <section class="content-section" id="mission">
+        <h2>Oyunun Misyonu</h2>
+        <p>Detective Investigations'ın misyonu, oyunculara gerçek bir dedektif gibi hissettirmek. Her davada doğru kararlar vererek gizemleri çözmeli ve suçluları ortaya çıkarmalısınız. Zekanızı ve dikkat yeteneğinizi test eden zorlu görevler sizleri bekliyor.</p>
+        <img src="img/2.jpg" alt="Detective Investigations">
+    </section>
+
+    <section class="content-section" id="features">
+        <h2>Oyunun Özellikleri</h2>
+        <ul>
+            <li>Büyüleyici Hikayeler: Birbirinden farklı gizem dolu olaylar.</li>
+            <li>İnteraktif Sorgulamalar: Şüphelileri sorgulayarak ipuçları elde edin.</li>
+            <li>Bulmacalar: Her dava çözülmesi gereken zor bulmacalar içerir.</li>
+            <li>Çoklu Senaryolar: Farklı sonuçlara ulaşabileceğiniz olay örgüleri.</li>
+            <li>Gerçekçi Atmosfer: Detaylı grafikler ve etkileyici ses tasarımı.</li>
+        </ul>
+        <img src="img/3.jpg" alt="Detective Investigations">
+    </section>
+
+    <section class="content-section" id="graphics-sound">
+        <h2>Grafik ve Ses</h2>
+        <p>Detective Investigations, sinematik grafiklerle zenginleştirilmiş bir dünya sunar. Her mekan, gerçekçilik hissini artıran ayrıntılı tasarımlara sahiptir. Ses efektleri ve atmosferik müzikler de oyunculara olayların içinde olduklarını hissettirir. Suç mahallindeki her ses, her fısıltı önemli bir ipucu olabilir.</p>
+        <img src="img/4.jpg" alt="Detective Investigations">
+    </section>
+
+    <section class="content-section" id="characters">
+        <h2>Karakterler</h2>
+        <p>Oyunda, farklı kişiliklere ve geçmişlere sahip birçok karakterle tanışacaksınız. Her karakterin, davanın çözümüne katkı sağlayacak önemli bilgileri olabilir. Ancak, bazıları size doğruyu söylemeyebilir, bu yüzden dikkatli olmalısınız.</p>
+        <img src="img/5.jpg" alt="Detective Investigations">
+    </section>
+
+    <section class="content-section" id="levels">
+        <h2>Davalar</h2>
+        <p>Her dava, oyuncuları yeni zorluklarla karşı karşıya bırakır. Cinayetler, soygunlar, kaybolan insanlar… Tüm bu davalar oyuncuların dedektiflik becerilerini geliştirmesini sağlar. Her seviye, farklı bir senaryo ve çözüm gerektirir.</p>
+        <img src="img/44.jpg" alt="Detective Investigations">
+    </section>
+
+    <section class="content-section" id="reviews">
+        <h2>Yorumlar</h2>
+        <p>Detective Investigations, oyunculardan çok olumlu yorumlar aldı. Oyunun atmosferi, hikayesi ve bulmacaları birçok oyuncu tarafından beğenildi. İşte bazı oyuncu yorumları:</p>
+        <blockquote>"Kendimi gerçek bir dedektif gibi hissettim. Çok sürükleyici!"</blockquote>
+        <blockquote>"Bulmacalar gerçekten zorlayıcı ama bir o kadar da tatmin edici."</blockquote>
+        <blockquote>"Hikaye örgüsü harika, her detay önemli!"</blockquote>
+        <img src="img/5.jpg" alt="Detective Investigations">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Detective Investigations</p>
+    </footer>
+
+<script>
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('menu-open');
+    });
+</script>
+</div>
+<div id="original">
+    <div class="wrap__btn--PxHri--section">
+        <div class="main__img--l83Xf--section">
+            <img src="img/logo.svg" alt="Logo" class="logo-img">
+            <h1>– 18 yaşınız var?</h1>
+            <div class="button__header--0mbZF--element">
+                <a href="#" class="button button-yes">Bəli</a>
+                <a href="#" class="button button-no">Xeyr</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Detective Investigations",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Detective Investigations",
+        "description": "Detective Investigations ile gizemleri çözmeye hazır olun! Zorlu davalar ve şaşırtıcı olaylarla dolu bir dedektiflik oyunu.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Detective Investigations",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Detective Investigations",
+        "description": "Detective Investigations ile gizemleri çözmeye hazır olun! Zorlu davalar ve şaşırtıcı olaylarla dolu bir dedektiflik oyunu.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Detective Investigations"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>
