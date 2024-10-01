@@ -3,5 +3,5 @@ User-Agent: *
 Disallow:
 
 
-Sitemap: http://pin-up.pin-up.detinvpin.pro/sitemap.xml
-Host: pin-up.pin-up.detinvpin.pro
+Sitemap: http://pin-up.detinvpin.pro/sitemap.xml
+Host: pin-up.detinvpin.pro
