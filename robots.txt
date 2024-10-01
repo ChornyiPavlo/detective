@@ -3,5 +3,5 @@ User-Agent: *
 Disallow:
 
 
-Sitemap: http://pin-up.detectiveinvestigations.xyz/sitemap.xml
-Host: pin-up.detectiveinvestigations.xyz
+Sitemap: http://pin-up.pin-up.detinvpin.pro/sitemap.xml
+Host: pin-up.pin-up.detinvpin.pro
